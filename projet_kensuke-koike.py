@@ -51,7 +51,7 @@ print("- entrez 4 pour le quadrillage")
 print("- entrez 5 pour l'inversion")
 print("- entrez 6 pour la séparation en 4 images")
 print("- entrez 7 pour le pixelisateur")
-réponse = input("Quelles modifications aimeriez-vous apporter à votre image ?\n")
+réponse = input("Quelles modifications aimeriez-vous apporter à votre image ? Ensuite, patientez quelques secondes...\n")
 
 #Espace dédié au fonctions pour modifier l'image
 
