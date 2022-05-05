@@ -2,65 +2,48 @@ from PIL import Image
 from IPython.display import display
 import urllib.request
 
+condition = input("Avez-vous une image (lien nécessaire) en tête que vous aimeriez modifier ? (répondez par oui ou par non)")
+
+if condition == "oui" :
+  lien = input("Quelle image aimeriez-vous modifier ? (lien .jpg ou .bmp libre de droit uniquement)")
+      
 #Espace dédié aux images proposées
-print("Choisissez une image à déformer parmi cette liste d'images libres de droit !")
-print("- 1 : régiment de bananes \n- 2 : la Terre \n- 3 : pastèque \n- 4 : 'La Laitière' \n- 5 : drapeau du Brésil \n- 6 : 'La nuit étoilée' - Van Gogh\n- 7 : 'La Grande Vague de Kanagawa' - Hokusai\n- 8 : logo de IKEA\n- 9 : aurore boréale\n- 10 : le Laure des Grottes à Kyiv\n- 11 : taxi new-yorkais\n- 12 : cerf\n- 13 : Vinicunca\n- 14 : poisson-mandarin\n- 15 : Jaws (spot de surf)\n- 16 : Kensuke Koike")
-numero = input("Entrez le numéro de l'image que vous souhaitez modifier \n")
 
-if numero == "1" :
-    lien = "http://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
+else : 
+  print("Pas de problème, vous pouvez choisir parmi cette liste d'images libres de droit !")
+  print("- 1 : régiment de bananes \n- 2 : la Terre \n- 3 : pastèque \n- 4 : 'La Laitière' \n- 5 : drapeau du Brésil \n- 6 : 'La nuit étoilée' - Van Gogh\n- 7 : 'La Grande Vague de Kanagawa' - Hokusai\n- 8 : aurore boréale")
+  numero = input("Entrez le numéro de l'image que vous souhaitez modifier \n")
 
-if numero == "2" : 
-    lien = "https://upload.wikimedia.org/wikipedia/commons/d/d9/Earth_by_the_EPIC_Team_on_21_April_2018.png"
+  if numero == "1" :
+    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/640px-Bananas_white_background_DS.jpg"
 
-if numero == "3" :
-    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wassermelone_%2827769857845%29.jpg/1280px-Wassermelone_%2827769857845%29.jpg"
+  if numero == "2" : 
+    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Earth_by_the_EPIC_Team_on_21_April_2018.png/768px-Earth_by_the_EPIC_Team_on_21_April_2018.png"
 
-if numero == "4" :
-    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg/913px-Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg"
+  if numero == "3" :
+    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Wassermelone.jpg/779px-Wassermelone.jpg"
 
-if numero == "5" :
-    lien = "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/1280px-Flag_of_Brazil.svg.png"
+  if numero == "4" :
+    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg/685px-Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg"
 
-if numero == "6" :
-    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/2560px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
+  if numero == "5" :
+    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/640px-Flag_of_Brazil.svg.png"
 
-if numero == "7" :
-    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tsunami_by_hokusai_19th_century.jpg/2560px-Tsunami_by_hokusai_19th_century.jpg"
+  if numero == "6" :
+    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/970px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
 
-if numero == "8" :
-    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ikea_logo.svg/2560px-Ikea_logo.svg.png"
+  if numero == "7" :
+    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tsunami_by_hokusai_19th_century.jpg/640px-Tsunami_by_hokusai_19th_century.jpg"
 
-if numero == "9" :
-    lien = "https://upload.wikimedia.org/wikipedia/commons/a/aa/Polarlicht_2.jpg"
-
-if numero == "10" :
-    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/%D0%9B%D0%B0%D0%B2%D1%80%D0%B0.jpg/2560px-%D0%9B%D0%B0%D0%B2%D1%80%D0%B0.jpg"
-
-if numero == "11" :
-    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/New_York_Taxi.JPG/2560px-New_York_Taxi.JPG"
-
-if numero == "12" :
-    lien = "https://upload.wikimedia.org/wikipedia/commons/3/3f/Cervus_unicolor_2.jpg"
-
-if numero == "13" :
-    lien = "https://upload.wikimedia.org/wikipedia/commons/1/1e/Rainbow_Mountain_Peru.jpg"
-
-if numero == "14" :
-    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Synchiropus_splendidus_2_Luc_Viatour.jpg/2560px-Synchiropus_splendidus_2_Luc_Viatour.jpg"
-
-if numero == "15" :
-    lien = "https://upload.wikimedia.org/wikipedia/commons/4/45/Maggie_Hallahan_Jaws_Hawaii.jpg"
-
-if numero == "16" :
-    lien = "https://upload.wikimedia.org/wikipedia/commons/f/fe/Kensuke_Koike_ritratto.png"
-
+  if numero == "8" :
+    lien = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Polarlicht_2.jpg/640px-Polarlicht_2.jpg"
+    
 im  = Image.open(urllib.request.urlopen(lien))
 
 
 #Espace dédié au modification proposée
 
-print("Il existe plusieurs modifications possibles, elles sont les suivantes :")
+print("Il existe plusieurs modifications possibles :")
 print("- entrez 1 pour l'extraction de carrés dans l'image")
 print("- entrez 2 pour le découpage en bandelettes")
 print("- entrez 3 pour l'extension")
@@ -68,7 +51,7 @@ print("- entrez 4 pour le quadrillage")
 print("- entrez 5 pour l'inversion")
 print("- entrez 6 pour la séparation en 4 images")
 print("- entrez 7 pour le pixelisateur")
-reponse = input("Quelles modifications aimeriez vous apporter à votre image ?\n Attendre quelques secondes pour le résultat...")
+réponse = input("Quelles modifications aimeriez-vous apporter à votre image ?\n")
 
 #Espace dédié au fonctions pour modifier l'image
 
@@ -396,23 +379,23 @@ def pixeliser():
 
 #Appel des fonctions
 
-if reponse == "1":
-    carre_blanc()
+if réponse == "1" :
+  carre_blanc()
 
-if reponse == "2": 
-    bande()
+if réponse == "2" : 
+  bande()
+  
+if réponse == "3" :
+  extension()
 
-if reponse == "3":
-    extension()
+if réponse == "4" :
+  quadrillage()
 
-if reponse == "4" :
-    quadrillage()
+if réponse == "5" :
+  inversion()
 
-if reponse == "5" :
-    inversion()
+if réponse == "6" :
+  quatre_image()
 
-if reponse == "6" :
-    quatre_image()
-
-if reponse == "7":
+if réponse == "7":
     pixeliser()
